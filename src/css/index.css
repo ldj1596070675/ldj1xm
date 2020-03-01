@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+html,
+body,
+div,
+p,
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+pre,
+code,
+table,
+tr,
+td,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+i {
+    font-style: normal;
+}
+
+em {
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+.container {
+    width: 1210px;
+    margin: 0 auto;
+}
+.pic{
+    width: 100%;
+    height: 100px;
+    background:#22C6B3;
+}
+.nav{
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    background: #FCFCFC;
+    border-bottom: 1px solid #EDEEF0;
+}
+.ncLeft{
+float: left;
+}
+.wCom{
+    height: 32px;
+    line-height: 32px;  
+}
+.wCom h5{
+    padding: 12px 0 8px;
+}
+.wCom .dsp1{
+    font-size: 12px;
+    color: #666666;
+}
+.wCom .dsp2{
+    color: silver;
+}
+.wCom .dsp2 a{
+    text-decoration: none;
+    color: #ff6600;
+    font-size: 12px;
+}
