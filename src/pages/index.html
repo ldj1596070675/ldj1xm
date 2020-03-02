@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/index.css">
-    <script src="../lib/jquery/dist/jquery.min.js"></script>
-    <script src="../js/index.js"></script>
+    <link rel="stylesheet" href="../lib/swiper/css/swiper.min.css">
 </head>
 
 <body>
@@ -32,34 +31,434 @@
             <dl class="ncRight">
                 <dd>
                     <a>
-                        <i></i>我的音平
+                        <span class="glyphicon glyphicon-user"></span> 我的音平
                         <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul>
+                        <li><a>账户管理</a></li>
+                        <li><a>我的订单</a></li>
+                        <li><a>我的收藏</a></li>
+                        <li><a>我的评价</a></li>
+                        <li><a>我的卡劵&nbsp;&nbsp;<span class="shUju">0</span></a></li>
+                    </ul>
+                </dd>
+
+                <dd>
+                    <a>
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        我的购物车
+
+                    </a>
+                    <span class="num">0</span>
+                </dd>
+                <dd>
+                    <a>
+                        <span class="glyphicon glyphicon-heart"></span>
+                        企业采购
                     </a></dd>
                 <dd>
                     <a>
-                        <i></i>我的购物车
+                        <span class="glyphicon glyphicon-heart"></span>
+                        分享链接
                     </a></dd>
                 <dd>
                     <a>
-                        <i></i>
-                    </a></dd>
-                <dd>
-                    <a>
-                        <i></i>
-                    </a></dd>
-                <dd>
-                    <a>
-                        <i></i>
+                        <img src="../imgs/ (64).gif" />
+                        客服服务<span class="glyphicon glyphicon-chevron-down"></span>
                     </a></dd>
             </dl>
+        </div>
+    </div>
+    <div class="heaHox pt">
+        <div class="header">
+            <div class="container cot">
+                <div class="logo">
+                    <a><img src="../imgs/ (80).png" /></a>
+                </div>
+                <div class="loGif">
+                    <a><img src="../imgs/ (58).gif" /></a>
+                </div>
+                <div class="shear">
+                    <div class="shearBox">
+                        <div class="Inbox">
+                            <input type="text" class="shIpt" value="" />
+                        </div>
+                        <button>搜索</button>
+                        <div class="shear-txt">
+                            <a>
+                                解决方案
+                                <img src="../imgs/ (86).jpg" />
+                            </a>
+                            <a>
+                                K歌直播声卡
+                                <img src="../imgs/ (86).jpg" />
+                            </a>
+                            <a>录音声卡</a>
+                            <a>监听音箱</a>
+                            <a>电容麦</a>
+                            <a>吉他</a>
+                            <a>调音台</a>
+                            <a>RME声卡</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="active">
+                    <span class="mb">
+                        <div class="wx-code" style="width: 220px;height: 260px;">
+                            <a href="https://www.ingping.com/app/download"></a>
+                            <div class="codeImg">
+                                <img src="https://img.ingping.com/images/activity/template/316/wx_code-1.0.2.jpg" />
+                            </div>
+                        </div>
+                    </span>
+                    <b></b>
+                    <span class="zp">
+                        <a href="https://www.ingping.com/help/genuine.html"></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="nav-bar clearfix">
+                <div class="All">
+                    <div class="allBnt">
+                        <h2>
+                            <a>
+                                全部商品分类
+                            </a>
+                        </h2>
+                        <ul class="allUl">
+                            <li>
+                                <div class="text">
+                                    <a>声卡</a>
+                                    <a>调音台</a>
+                                    <a>控制器</a>
+                                </div>
+                                <dl>
+                                    <dd>
+                                        <a>K歌声卡</a>
+                                        <a>专业声卡</a>
+                                        <a>调音台</a>
+                                    </dd>
+                                </dl>
+                                <div class="dlList">
+                                    <dl class="listBox">
+                                    </dl>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="text">
+                                    <a>麦克风</a>
+                                    <a>耳机</a>
+                                    <a>扩音器</a>
+                                </div>
+                                <dl>
+                                    <dd>
+                                        <a>电容麦</a>
+                                        <a>无线麦</a>
+                                        <a>音乐耳机</a>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <div class="text">
+                                    <a>音箱</a>
+                                    <a>功放</a>
+                                    <a>家庭影院</a>
+                                </div>
+                                <dl>
+                                    <dd>
+                                        <a>KTV功放</a>
+                                        <a>监听音箱</a>
+                                        <a>舞台音箱</a>
+                                    </dd>
+                                </dl>
+                                <div></div>
+                            </li>
+                            <li>
+                                <div class="text">
+                                    <a>键盘</a>
+                                    <a>吉他</a>
+                                    <a>贝司</a>
+                                </div>
+                                <dl>
+                                    <dd>
+                                        <a>MIDI键盘</a>
+                                        <a>民谣吉他</a>
+                                        <a>架子鼓</a>
+                                    </dd>
+                                </dl>
+                                <div></div>
+                            </li>
+                            <li>
+                                <div class="text">
+                                    <a>影视录音</a>
+                                    <a>点歌机</a>
+                                    <a>播放器</a>
+                                </div>
+                                <dl>
+                                    <dd>
+                                        <a>录音机</a>
+                                        <a>一体点歌机</a>
+                                        <a>触摸屏</a>
+                                    </dd>
+                                </dl>
+                                <div></div>
+                            </li>
+                            <li>
+                                <div class="text">
+                                    <a>话放</a>
+                                    <a>耳放</a>
+                                    <a>效果器</a>
+                                </div>
+                                <dl>
+                                    <dd>
+                                        <a>模拟话放</a>
+                                        <a>专业耳放</a>
+                                        <a>吉他效果器</a>
+                                    </dd>
+                                </dl>
+                                <div></div>
+                            </li>
+                            <li>
+                                <div class="text">
+                                    <a>配件</a>
+                                    <a>软件</a>
+                                    <a>声卡调试</a>
+                                </div>
+                                <dl>
+                                    <dd>
+                                        <a>麦克风支架</a>
+                                        <a>摄像头</a>
+                                        <a>录音软件</a>
+                                    </dd>
+                                </dl>
+                                <div></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-txt">
+                    <div class="main-txt clearfix">
+                        <ul>
+                            <li><a>网站首页</a></li>
+                            <li><a>套装方案</a></li>
+                            <li><a>活动专区</a></li>
+                            <li><a>品牌专区</a></li>
+                            <li><a>音平资讯</a></li>
+                            <li><a>音平乐享</a></li>
+                            <li><a>音乐师</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-banner">
+                    <div class="m_vew">
+                        <div class="mWarp">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a><img src="../imgs/ (37).jpg" /></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a><img src="../imgs/ (38).jpg" /></a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a><img src="../imgs/ (39).jpg" /></a>
+                                </div>
+                                <!-- 如果需要分页器 -->
+                                <div class="swiper-pagination"></div>
+
+                                <!-- 如果需要导航按钮 -->
+                                <!-- <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div> -->
+                            </div>
+                        </div>
+                        <div class="page">
+                            <a href="javascript:void(0)" class="pre"></a>
+                            <a href="javascript:void(0)" class="next"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pos-r">
+        <div class="full container">
+            <div class="swiper-container baNUul">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../imgs/ (64).jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imgs/ (66).jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imgs/ (68).jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imgs/ (69).jpg" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../imgs/ (70).jpg" />
+                    </div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- 如果需要滚动条
+                    <div class="swiper-scrollbar"></div> -->
+            </div>
+            <div class="show-wc">
+                <ul class="wcUl1">
+                    <li>公告</li>
+                    <li>资讯</li>
+                    <li>下载</li>
+                    <li>技术</li>
+                    <span class="wcSpan"></span>
+                </ul>
+                <ul class="wcUl2">
+                    <li><a>【活动】女王价到 每满500减30元</a></li>
+                    <li><a>【活动】让爱发声 爆款产品低价抢</a></li>
+                    <li><a>【活动】共克时艰 满减让利 每满</a></li>
+                    <li><a>【贺词】音平CEO郑楚广庚子年贺</a></li>
+                    <li><a>【重要通知】2020年春节期间客服</a></li>
+                    <li><a>【下载】音平商城APP上线啦</a></li>
+                </ul>
+                <ul class="wcUl3">
+                    <li>
+                        <a>
+                            <img src="../imgs/15-19-16.png" />
+                            <P>录音编曲</P>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="../imgs/15-20-42.png" />
+                            <P>网络主播</P>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a>
+                            <img src="../imgs/Snipaste_2020-03-02_15-21-38.png" />
+                            <P>手机直播</P>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="../imgs/15-21-53.png" />
+                            <P>演出音响</P>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="../imgs/15-22-12.png" />
+                            <P>家庭KTV</P>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="../imgs/15-22-37.png" />
+                            <P>影视录音</P>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="../imgs/15-22-59.png" />
+                            <P>吉他乐器</P>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="../imgs/15-23-16.png" />
+                            <P>音乐欣赏</P>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="../imgs/15-23-31.png" />
+                            <P>会议工程</P>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
 
 
-
-
-    
 </body>
+<script src="../lib/jquery/dist/jquery.min.js"></script>
+<script src="../js/index.js"></script>
+<script src="../lib/swiper/js/swiper.min.js"></script>
+
+
+<script>
+    // $(".allUl>li").on({
+       
+    //     mouseenter:()=>$(".dlList").stop().show(),
+    //     mouseleave:()=>$(".dlList").stop().hide()
+    // })
+    $(".allUl>li").mouseenter(function(){
+       $(this).each(item=>{
+            $(".dlList").stop().show()
+       })
+   })
+   $(".allUl>li").mouseleave(function(){
+       $(this).each(item=>{
+            $(".dlList").stop().hide()
+       })
+   })
+</script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        // direction: 'vertical', // 垂直切换选项
+        loop: true, // 循环模式选项
+        autoplay: {
+            delay: 2000
+        },
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // 如果需要滚动条
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+    })
+</script>
+<script>
+    getList()
+
+    function getList() {
+        $.ajax({
+            url: "../lib/dl.json",
+            dataType: "json",
+            success: function (res) {
+                console.log(res)
+                let str = ""
+                res.forEach(ele => {
+                    str += `
+                    <dt>${ele.title}</dt>`
+                    ele.list.forEach(item=>{
+                        str+=`<dd>${item.name}<span>/</span></dd>`
+                    })
+                    str+=`</dl>`
+                });
+                $(".dlList>.listBox").html(str)
+            }
+        })
+    }
+</script>
 
 </html>

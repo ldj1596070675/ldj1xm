@@ -1,1 +1,1 @@
-"use strict";
+"use strict";$(".ncRight>dd").mousemove(function(){$(this).children().addClass("on")}),$(".ncRight>dd").mouseleave(function(){$(this).children().removeClass("on")}),$(".wcUl1 > li").mouseover(function(){$(".wcSpan").stop().animate({left:48*$(this).addClass("sp").index()+18})}),$(".wcUl1 > li").mouseleave(function(){$(".wcSpan").stop().animate({left:18}),$(this).removeClass("sp")});
