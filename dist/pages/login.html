@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><title>login</title><link rel=stylesheet href=../css/login.css><link rel=stylesheet href=../lib/bootstrap/dist/css/bootstrap.css></head><body><div class=head><div class=container><div class=imgs><img src=https://passport.ingping.com/images/ingping-1.0.0.png></div><div class=hp><p style=margin-bottom:0>为确保您的账号安全及正常使用，依《网络安全法》相关要求，会员账号需绑定手机。如您还未绑定，请尽快完成，感谢您的理解及支持！</p></div><div class=img-item><ul style=overflow:hidden><li><a><img src=https://passport.ingping.com/images/ingpingmall-1.0.0.png></a><span><img src=https://passport.ingping.com/images/xiegang-1.0.0.png></span></li><li><a><img src=https://passport.ingping.com/images/ingpingzixun-1.0.0.png></a><span><img src=https://passport.ingping.com/images/xiegang-1.0.0.png></span></li><li><a><img src=https://passport.ingping.com/images/yingshifu-1.0.0.png></a><span><img src=https://passport.ingping.com/images/xiegang-1.0.0.png></span></li><li><a><img src=https://passport.ingping.com/images/ingpinglexiang-1.0.0.png></a></li></ul></div></div></div><div class=cont><div class=loginBox><div class=login><p>一个账号，玩转所有音平服务</p><div class=lg-from><h2>密码登录</h2><form style=position:relative><input class=lgInp1 type=text name=username value="" placeholder=用户名> <input class="lgInp1 lgInp2" type=password name=password name=username value="" placeholder=密码> <span class=lgsPan><a>忘记密码?</a></span> <input class=bnt type=submit value=立即登录><dl class=lgDl><dt>合作伙伴账号登录：</dt><dd><a style="background-position:0 0" title=微信 href="/quickLogin/index?login_type=wechat&login_retUrl=https%3A%2F%2Fwww.ingping.com%2F%3Futm_source%3Dbaidu%26utm_medium%3Dppc%26utm_term%3D%25E9%259F%25B3%25E5%25B9%25B3%25E5%2595%2586%25E5%259F%258E%26utm_content%3D01%26utm_campaign%3DA%26bd_vid%3D11442598781508908223&fxPid=&source=ingping"></a></dd><dd><a style="background-position:0 -58px" title=支付宝 href="/quickLogin/index?login_type=alipay&login_retUrl=https%3A%2F%2Fwww.ingping.com%2F%3Futm_source%3Dbaidu%26utm_medium%3Dppc%26utm_term%3D%25E9%259F%25B3%25E5%25B9%25B3%25E5%2595%2586%25E5%259F%258E%26utm_content%3D01%26utm_campaign%3DA%26bd_vid%3D11442598781508908223&fxPid="></a></dd><dd><a style="background-position:0 -87px" title=QQ href="/quickLogin/index?login_type=tencent&login_retUrl=https%3A%2F%2Fwww.ingping.com%2F%3Futm_source%3Dbaidu%26utm_medium%3Dppc%26utm_term%3D%25E9%259F%25B3%25E5%25B9%25B3%25E5%2595%2586%25E5%259F%258E%26utm_content%3D01%26utm_campaign%3DA%26bd_vid%3D11442598781508908223&fxPid="></a></dd><dd><a style="background-position:0 -116px" title=新浪 href="/quickLogin/index?login_type=sina&login_retUrl=https%3A%2F%2Fwww.ingping.com%2F%3Futm_source%3Dbaidu%26utm_medium%3Dppc%26utm_term%3D%25E9%259F%25B3%25E5%25B9%25B3%25E5%2595%2586%25E5%259F%258E%26utm_content%3D01%26utm_campaign%3DA%26bd_vid%3D11442598781508908223&fxPid="></a></dd></dl><span class=zc><a href=http://www.ldj1xm.com:8080/pages/zuc.html>注册音平账号</a></span></form></div></div></div></div></body><script src=../lib/jquery/dist/jquery.min.js></script><script>var nameInp = document.querySelector(".lgInp1")
+        var passInp = document.querySelector(".lgInp2")
+        var form = document.querySelector("form")
+        form.onsubmit = function (e) {
+            e = e || window.event
+            e.preventDefault()
+
+            //获取表单内容
+            var uname = nameInp.value
+            var upass = passInp.value
+
+            //非空验证
+            if (!uname || !upass) {
+                alert('请完整填写表单')
+                return
+            }
+
+            //发送请求
+            $.ajax({
+                url:"/login",
+                type:"post",
+                dataType:'json',
+                data:{
+                    username:`${uname}`,
+                    passward:`${upass}`
+                },
+                success:function(res){
+                    console.log(res)
+                    var result=res
+                    if(result.code===0){
+                        alert("登录失败")
+                    }else{
+                        alert("登录成功")
+                        window.location.href = './index.html'
+                    }
+                }
+            })
+        }</script></html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><title>Document</title><link rel=stylesheet href=../css/zuc.css><link rel=stylesheet href=../lib/bootstrap/dist/css/bootstrap.css></head><body><div class=head><div class=container><div class=imgs><img src=https://passport.ingping.com/images/ingping-1.0.0.png></div><div class=img-item><ul style=overflow:hidden><li><a><img src=https://passport.ingping.com/images/ingpingmall-1.0.0.png></a><span><img src=https://passport.ingping.com/images/xiegang-1.0.0.png></span></li><li><a><img src=https://passport.ingping.com/images/ingpingzixun-1.0.0.png></a><span><img src=https://passport.ingping.com/images/xiegang-1.0.0.png></span></li><li><a><img src=https://passport.ingping.com/images/yingshifu-1.0.0.png></a><span><img src=https://passport.ingping.com/images/xiegang-1.0.0.png></span></li><li><a><img src=https://passport.ingping.com/images/ingpinglexiang-1.0.0.png></a></li></ul></div></div></div><div class=cont><div class=loginBox><div class=login><p>一个账号，玩转所有音平服务</p><div class=lg-from><h2>注册</h2><form style=position:relative><input class=lgInp1 type=text name=username value="" placeholder=用户名> <input class="lgInp1 lgInp2" type=password name=password value="" placeholder=密码> <input class=bnt type=submit value=立即注册> <span class=zc><a href=http://www.ldj1xm.com:8080/pages/login.html>已有账号,去登录</a></span></form></div></div></div></div></body><script src=../lib/jquery/dist/jquery.min.js></script><script>var nameInp = document.querySelector(".lgInp1")
+        var passInp = document.querySelector(".lgInp2")
+        var form = document.querySelector("form")
+        form.onsubmit = function (e) {
+            e = e || window.event
+            e.preventDefault()
+
+            //获取表单内容
+            var uname = nameInp.value
+            var upass = passInp.value
+
+            //非空验证
+            if (!uname || !upass) {
+                alert('请完整填写表单')
+                return
+            }
+            var str=/^[^1-9]\w{5}$/i
+            var r=str.test(uname)
+            if(r===false){
+                alert('用户名不合法,只能是数字与字母6位,且不能以数字开头')
+                return
+            }
+            var pas=/^.{8,16}$/i
+            var t=pas.test(upass)
+            if(t===false){
+                alert("密码长度在8到16位")
+                return
+            }
+            //发送请求
+            $.ajax({
+                url:"/zhuc",
+                type:'post',
+                data:{
+                    username:`${uname}`,
+                    passward:`${upass}`
+                },
+                dataType:'json',
+                success:function(res){
+                    alert("注册成功")
+                    window.location.href = './login.html'
+                }
+            })
+
+        
+        }</script></html>

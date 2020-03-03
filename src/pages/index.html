@@ -8,7 +8,6 @@
     <title>yp商城</title>
     <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../lib/swiper/css/swiper.min.css">
 </head>
 
@@ -24,7 +23,7 @@
                 <dd class="wCom">
                     <h5>
                         <span class="dsp1">您好！欢迎来到音平商城！</span>
-                        <span class="dsp2">[ <a>请登录</a> | <a>免费主持</a> ]</span>
+                        <span class="dsp2">[ <a href="http://www.ldj1xm.com:8080/pages/login.html" target="block">请登录</a> | <a href="http://www.ldj1xm.com:8080/pages/zuc.html" target="block">免费注册</a> ]</span>
                     </h5>
                 </dd>
             </dl>
@@ -253,15 +252,15 @@
                 </div>
                 <div class="nav-banner">
                     <div class="m_vew">
-                        <div class="mWarp">
-                            <div class="swiper-wrapper">
+                        <div class="swiper-container mWarp">
+                            <div class="swiper-wrapper img">
                                 <div class="swiper-slide">
                                     <a><img src="../imgs/ (37).jpg" /></a>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide img">
                                     <a><img src="../imgs/ (38).jpg" /></a>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide img">
                                     <a><img src="../imgs/ (39).jpg" /></a>
                                 </div>
                                 <!-- 如果需要分页器 -->
@@ -398,23 +397,47 @@
 
 <script>
     // $(".allUl>li").on({
-       
+
     //     mouseenter:()=>$(".dlList").stop().show(),
     //     mouseleave:()=>$(".dlList").stop().hide()
     // })
-    $(".allUl>li").mouseenter(function(){
-       $(this).each(item=>{
+    $(".allUl>li").mouseenter(function () {
+        $(this).each(item => {
             $(".dlList").stop().show()
-       })
-   })
-   $(".allUl>li").mouseleave(function(){
-       $(this).each(item=>{
+        })
+    })
+    $(".allUl>li").mouseleave(function () {
+        $(this).each(item => {
             $(".dlList").stop().hide()
-       })
-   })
+        })
+    })
 </script>
 <script>
-    var mySwiper = new Swiper('.swiper-container', {
+    var mySwiper = new Swiper('.mWarp', {
+        direction: 'vertical', // 垂直切换选项
+        // loop: true, // 循环模式选项
+        autoplay: {
+            delay: 2000
+        },
+        // 如果需要分页器
+        // pagination: {
+        //     el: '.swiper-pagination',
+        // },
+
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // 如果需要滚动条
+        // scrollbar: {
+        //     el: '.swiper-scrollbar',
+        // },
+    })
+</script>
+<script>
+    var mySwiper = new Swiper('.baNUul', {
         // direction: 'vertical', // 垂直切换选项
         loop: true, // 循环模式选项
         autoplay: {
@@ -448,12 +471,12 @@
                 console.log(res)
                 let str = ""
                 res.forEach(ele => {
-                    str += `
+                    str += `<dl>
                     <dt>${ele.title}</dt>`
-                    ele.list.forEach(item=>{
-                        str+=`<dd>${item.name}<span>/</span></dd>`
+                    ele.list.forEach(item => {
+                        str += `<dd>${item.name}<span>/</span></dd>`
                     })
-                    str+=`</dl>`
+                    str += `</dl>`
                 });
                 $(".dlList>.listBox").html(str)
             }

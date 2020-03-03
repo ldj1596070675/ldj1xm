@@ -1,1 +1,1 @@
-"use strict";
+"use strict";function getSent(e,t){var n=new XMLHttpRequest;n.open("get",e),n.onload=function(){t(n.responseText)},n.send()}function postSent(e,t,n){var o=new XMLHttpRequest;o.open("post",e),o.onload=function(){t(o.responseText)},o.setRequestHeader("content-type","application/x-www-form-urlencoded"),o.send(n)}
