@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>del</title>
+    <link rel="stylesheet" href="../css/del.css">
+    <link rel="stylesheet" href="../lib/del/jquery.exzoom.css">
+</head>
+
+<body>
+    <div class="head">
+        <div class="content cb clearfix">
+            <div class="exzoom fdj" id="exzoom">
+                <!--大图区域-->
+                <div class="exzoom_img_box">
+                    <ul class='exzoom_img_ul exul'>
+
+                    </ul>
+                </div>
+                <!--缩略图导航-->
+                <div class="exzoom_nav"></div>
+                <!--控制按钮-->
+                <p class="exzoom_btn">
+                    <a href="javascript:void(0);" class="exzoom_prev_btn"> &lt; </a>
+                    <a href="javascript:void(0);" class="exzoom_next_btn"> &gt; </a>
+                </p>
+            </div>
+            <div class="criGht">
+                <div class="name">
+                    JBL JRX125 全频双15寸 专业舞台演出音箱（只）
+                </div>
+                <div class="summary">
+                    <div class="summary-wrap clearfix" style="overflow: hidden;">
+                        <div class="summary-price-left-box" style="float: left;">
+                            <div class="summary-price clearfix">
+                                <div class="dt">价&nbsp;&nbsp;&nbsp;&nbsp;格</div>
+                                <div class="dd">
+                                    <strong class="price"></strong>
+                                    <a class="d-tip"> 降价通知 </a>
+                                </div>
+                            </div>
+                            <div class="my-price">
+                                <span class="DiscountFrame talkbubble">会员专享</span>
+                                <a>点击登陆，即可查看您的专享优惠 >></a>
+                            </div>
+                        </div>
+                        <div class="summary-price-right-box" style="float: right;">
+                            <div class="Highpraise">
+                                <div>
+                                    好评度
+                                    <span id="proGoodRatingCount">99%</span>
+                                </div>
+                                <span class="comnum comm">
+                                    <a><span id="countComment">141</span>人评价</a>
+                                </span>
+                                <span id="comment_have_pic_count">
+                                    <a><span class="picShowComments">11</span>人晒单</a>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="summary-top">
+                    <div class="clearfix" style="overflow: hidden;">
+                        <div class="dt" style="line-height: 30px;">促&nbsp;&nbsp;&nbsp;&nbsp;销</div>
+                        <div class="dd">
+                            <div class="p-promotions">
+                                <div class="yp_ad_text_17072807">
+                                    <div class="prom-item">
+                                        <em class="hl_red_bg">活动</em>
+                                        <em class="hl_red">
+                                            <a style="color: red;">女王价到 > 每满500减30元</a>
+                                        </em>
+                                    </div>
+                                    <div class="prom-item">
+                                        <em class="hl_red_bg">满送</em>
+                                        <em class="hl_red">
+                                            <a style="color: red;">实付满10000起叠送豪礼 时间：3.5-3.8</a>
+                                        </em>
+                                    </div>
+                                    <div class="prom-item">
+                                        <em class="hl_red_bg">立减</em>
+                                        <em class="hl_red">
+                                            <a style="color: red;">小程序下单立减5元>></a>
+                                        </em>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary-stock clearfix">
+                    <div class="dt" style="line-height: 30px;">配&nbsp;&nbsp;&nbsp;&nbsp;送</div>
+                    <div class="dd clearfix">
+                        <div class="p-promotions">
+                            <div id="goodsStoreMsg">现货，该商品需调配，下单后请与客服确定到货时间</div>
+                            <div>
+                                现在下单，立享满99元包邮
+                                <a class="d-tip">运费说明</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="choose-version clearfix" style="overflow: hidden;">
+                    <div class="dt">规&nbsp;&nbsp;&nbsp;&nbsp;格</div>
+                    <div id="ul_spec0" class="dd">
+                        <div class="item">
+                            <b class="bg-icons"></b>
+                            <a>单12寸</a>
+                        </div>
+                        <div class="item">
+                            <b class="bg-icons"></b>
+                            <a>单15寸</a>
+                        </div>
+                        <div class="item">
+                            <b class="bg-icons"></b>
+                            <a>双15寸</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/del/jquery.exzoom.js"></script>
+</body>
+<script>
+    $("#exzoom").exzoom();
+</script>
+<script>
+    // 1. 获取 localStorage 里面的数据
+    const info = JSON.parse(localStorage.getItem('goods_info'))
+    //  console.log(info)
+
+    //2. 判断数据是否存在
+    if (!info) {
+        // 能执行表示 !info 是一个 true
+        // 表示 info 是一个 false
+        // 表示数据不存在
+        alert('您要查看的数据不存在')
+        // 跳转回列表页面
+        window.location.href = './list.html'
+    }
+
+    // 3. 渲染页面
+    bindHtml()
+
+    function bindHtml() {
+        let str = ""
+        info.lis.forEach(ele => {
+            str += `<li> 
+                    <img src=${ele.img} />
+                  </li>`
+        });
+        $(".exzoom_img_box>ul").html(str)
+        $('.content .name').text(info.txt)
+        $('.content .price').text(info.price)
+    }
+
+    console.log(info)
+
+    // 4. 点击添加购物车
+    // 4-1. 添加点击事件
+    $('.addCart').click(() => {
+        // console.log('我要添加购物车了')
+
+        // 4-2. 判断是否登录
+
+        // 4-3. 加入到购物车数组里面
+        //    先拿到 localStorage 里面的那个数组信息
+        //    如果原先没有数据, 那么我就用一个空数组来代替
+        //    如果有数据, 就用我们的数据
+        const cartList = JSON.parse(localStorage.getItem('cartList')) || []
+
+        // 象数组里面把本条数据添加进去
+        // 4-4. 判断有没有这个数据
+        //      每一个数据都有一个自己的 id
+        //      只要看数组里面有没有 id 一样的数据, 就知道有没有这个数据了
+        //      数组常用方法有一个叫做 some 的方法
+        //      返回值:
+        //        true: 表示数组里面有这个信息
+        //        false: 表示数组里面没有这个信息
+        let exits = cartList.some(item => {
+            // 数组里面每一个的 id === 本页面的这条数据的 id
+            return item.id === info.id
+        })
+
+        console.log(exits)
+        if (exits) {
+            // 表示有这个信息了, 我们要让 number ++
+            // console.log('已经存在 number ++')
+            // 找到这个信息给他 number ++
+            let data = null
+            for (let i = 0; i < cartList.length; i++) {
+                if (cartList[i].id === info.id) {
+                    data = cartList[i]
+                    break
+                }
+            }
+            //data 就是我找到的这个信息
+            data.number++
+
+            //4-5. 数量添加的时候, 小计价格要改变
+            data.xiaoji = data.number * data.price // 数量 * 单价
+        } else {
+            //  表示没有这个信息, 直接 push 就可以了
+            // push 之前, 象里面添加一个 number 信息为 1
+            info.number = 1
+
+            // 4-5. 多添加一些信息
+            info.xiaoji = info.price // 因为默认是第一个, 小计就是单价
+            info.isSelect = false // 默认不选中
+            cartList.push(info)
+        }
+
+        // 在存储到 localStorage 里面
+        localStorage.setItem('cartList', JSON.stringify(cartList))
+    })
+</script>
+
+</html>

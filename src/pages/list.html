@@ -113,7 +113,7 @@
             let str = ''
 
             list.forEach(item => {
-                str += `<li>
+                str += `<li data-id="${item.id}">
                     <img src=${item.ulr} />
                     <ol class="imgList">`
                 item.lis.forEach(it => {
@@ -174,7 +174,7 @@
         }
         $('.criGht > ul').on('click', 'li', function () {
             const id = $(this).data('id')
-            // console.log('我应该找到 list2 这个数组中 id 为 ' + id + ' 的那一条数据')
+            //console.log('我应该找到 list2 这个数组中 id 为 ' + id + ' 的那一条数据')
 
             // 从总的数据里面找到 id 配套的哪一个数据
             let data = {}
@@ -194,9 +194,9 @@
             // 就把我找到的这个数据存储在 localStorage 里面
             //   当你到达 detail 页面的时候, 在拿出来就可以了
             localStorage.setItem('goods_info', JSON.stringify(data))
-
+            
             // 存储好了以后就跳转页面
-            window.location.href = './detail.html'
+             window.location.href = './detail.html'
         })
     </script>
 </body>
