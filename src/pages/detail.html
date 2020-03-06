@@ -17,7 +17,7 @@
                 <!--大图区域-->
                 <div class="exzoom_img_box">
                     <ul class='exzoom_img_ul exul'>
-
+                        <li><img src="https://img.ingping.com/images/product/MLI/201711/201711061026530648363.jpg" /></li>
                     </ul>
                 </div>
                 <!--缩略图导航-->
@@ -122,6 +122,25 @@
                         </div>
                     </div>
                 </div>
+                <div class="detail-btns clearfix">
+                    <div class="btn-add-cart">
+                        <a class="p-btn-large liji">立即购买</a>
+                        <a id="addCart" class="p-btn-large">加入购物车</a>
+                    </div>
+                    <div class="qrcode-panel">
+                        <div class="qrc-wrapper">
+                            <img class="b-img" src="//www.ingping.com/erWeiMaImg/getErWeiMaImg?content=https%3A%2F%2Fm.ingping.com%2Fproduct%2Fshow%3Fid%3D930" />
+                        </div>
+                        <div class="q-bottom">
+                            <div class="q-text one-row">
+                                <div class="cli-buy txt">手机购买</div>
+                            </div>
+                        <div style="width:55px;height:50px;position: absolute;right: -60px;top:0">
+                            <img src="https://static.ingping.com/yp/images/default/jian.png" />
+                        </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -151,6 +170,7 @@
     bindHtml()
 
     function bindHtml() {
+        // console.log(info)
         let str = ""
         info.lis.forEach(ele => {
             str += `<li> 
@@ -159,14 +179,15 @@
         });
         $(".exzoom_img_box>ul").html(str)
         $('.content .name').text(info.txt)
-        $('.content .price').text(info.price)
+        $('.content .price').text("¥"+info.price)
+        
     }
 
-    console.log(info)
+    // console.log(info)
 
     // 4. 点击添加购物车
     // 4-1. 添加点击事件
-    $('.addCart').click(() => {
+    $('#addCart').click(() => {
         // console.log('我要添加购物车了')
 
         // 4-2. 判断是否登录
@@ -190,7 +211,7 @@
             return item.id === info.id
         })
 
-        console.log(exits)
+        // console.log(exits)
         if (exits) {
             // 表示有这个信息了, 我们要让 number ++
             // console.log('已经存在 number ++')
@@ -204,9 +225,12 @@
             }
             //data 就是我找到的这个信息
             data.number++
-
+            // console.log( data.number++)
             //4-5. 数量添加的时候, 小计价格要改变
             data.xiaoji = data.number * data.price // 数量 * 单价
+            // console.log(data.number)
+            // console.log(data.price)
+            // console.log(data.xiaoji)
         } else {
             //  表示没有这个信息, 直接 push 就可以了
             // push 之前, 象里面添加一个 number 信息为 1
